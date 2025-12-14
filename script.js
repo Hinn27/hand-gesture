@@ -646,11 +646,12 @@ function transitionToImage() {
             const size = 200 + Math.random() * 150; // Kích thước ngẫu nhiên 200-350px
             const delay = i * (3 + Math.random() * 2); // Giãn cách ngẫu nhiên 3-5s
             const duration = 15 + Math.random() * 5; // Thời gian trôi 15-20s
+            const startOffset = -400 - (Math.random() * 600); // Offset bắt đầu từ -400 đến -1000px để tránh chồng
 
             img.style.cssText = `
                 position: absolute;
                 top: ${topPosition}%;
-                left: -400px;
+                left: ${startOffset}px;
                 width: ${size}px;
                 height: auto;
                 border-radius: 15px;

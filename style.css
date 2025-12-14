@@ -214,7 +214,7 @@ body {
 /* Slideshow Animation */
 @keyframes slideRight {
     0% {
-        left: -400px;
+        left: -1000px;
         opacity: 0;
     }
     5% {
