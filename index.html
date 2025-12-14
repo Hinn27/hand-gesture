@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Hand Tracking - Merry Christmas!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Video Camera Feed (Hidden) -->
+    <video id="videoElement" autoplay playsinline></video>
+
+    <!-- Canvas for Hand Landmarks Drawing -->
+    <canvas id="handCanvas"></canvas>
+
+    <!-- Three.js 3D Canvas -->
+    <div id="threejs-container"></div>
+
+    <!-- Image Slideshow Container -->
+    <div id="imageSlideshow" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100; pointer-events: none; overflow: hidden;"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui-overlay">
+        <div class="status-panel">
+            <h2>🎄 Christmas Hand Tracking 🎄</h2>
+            <div class="gesture-status">
+                <span class="label">Current Gesture:</span>
+                <span id="gestureText" class="value">Waiting...</span>
+            </div>
+            <div class="instructions">
+                <h3>Cử chỉ điều khiển:</h3>
+                <ul>
+                    <li>🖐️ <strong>Xòe tay</strong> → Tạo cây thông Noel</li>
+                    <li>👊 <strong>Nắm tay</strong> → Hiển thị ảnh</li>
+                    <li>❌ <strong>Không xác định được tay</strong> → Bung tỏa</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Camera Preview (Small) -->
+        <div id="camera-preview">
+            <canvas id="previewCanvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="loader"></div>
+        <p>Loading MediaPipe & Three.js...</p>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
